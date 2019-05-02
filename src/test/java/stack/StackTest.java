@@ -2,7 +2,6 @@ package stack;
 
 import org.junit.Assert;
 import org.junit.Test;
-import java.util.EmptyStackException;
 
 public class StackTest {
 
@@ -12,7 +11,7 @@ public class StackTest {
 		stack.push(null);
 	}
 
-	@Test (expected = MaximumStackDimensionException.class)
+	@Test (expected = StackOverflowException.class)
 	public void stackOverflowTest() {
 		Stack stack = new Stack();
 

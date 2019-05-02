@@ -1,7 +1,5 @@
 package stack;
 
-import java.util.EmptyStackException;
-
 public class Stack {
 
 	private final static int MAX_SIZE = 1024;
@@ -20,7 +18,7 @@ public class Stack {
 		}
 
 		if (top + 1 >= MAX_SIZE) {
-			throw new MaximumStackDimensionException("Stack can't contains more than " + MAX_SIZE + " elements!");
+			throw new StackOverflowException("Stack can't contains more than " + MAX_SIZE + " elements!");
 		}
 
 		top++;
@@ -29,11 +27,11 @@ public class Stack {
 
 	public Integer pop() {
 		if (top < 0) {
-			throw new EmptyStackException();
+			throw new EmptyStackException("Cannot pop from an empty stack!");
 		}
 
 		Integer popped = stack[top];
-		top --;
+		top--;
 		return popped;
 	}
 

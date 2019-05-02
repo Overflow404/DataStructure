@@ -8,25 +8,25 @@ public class QueueTest {
 	@Test (expected = NullPointerException.class)
 	public void pushNullElement() {
 		Queue queue = new Queue();
-		queue.push(null);
+		queue.enqueue(null);
 	}
 
-	@Test (expected = MaximumQueueDimensionException.class)
+	@Test (expected = QueueOverflowException.class)
 	public void stackOverflowTest() {
 		Queue queue = new Queue();
 
 		for (int i = 0; i < 1024; i++) {
-			queue.push(i);
+			queue.enqueue(i);
 		}
 
 		int extra = 0;
-		queue.push(extra);
+		queue.enqueue(extra);
 	}
 
 	@Test (expected = EmptyQueueException.class)
 	public void popOnEmptyStackTest() {
 		Queue queue = new Queue();
-		queue.pop();
+		queue.dequeue();
 	}
 
 	@Test
@@ -38,9 +38,9 @@ public class QueueTest {
 	@Test
 	public void lengthTest() {
 		Queue queue = new Queue();
-		queue.push(1);
-		queue.push(2);
-		queue.push(3);
+		queue.enqueue(1);
+		queue.enqueue(2);
+		queue.enqueue(3);
 
 		Assert.assertEquals(queue.length(), 3);
 	}
@@ -48,17 +48,17 @@ public class QueueTest {
 	@Test
 	public void popTest() {
 		Queue queue = new Queue();
-		queue.push(1);
-		queue.push(2);
-		queue.push(3);
+		queue.enqueue(1);
+		queue.enqueue(2);
+		queue.enqueue(3);
 
-		Assert.assertEquals((int) queue.pop(), 1);
+		Assert.assertEquals((int) queue.dequeue(), 1);
 		Assert.assertEquals(queue.length(), 2);
 
-		Assert.assertEquals((int) queue.pop(), 2);
+		Assert.assertEquals((int) queue.dequeue(), 2);
 		Assert.assertEquals(queue.length(), 1);
 
-		Assert.assertEquals((int) queue.pop(), 3);
+		Assert.assertEquals((int) queue.dequeue(), 3);
 		Assert.assertEquals(queue.length(), 0);
 	}
 }
