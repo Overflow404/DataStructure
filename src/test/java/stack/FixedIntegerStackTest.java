@@ -3,17 +3,17 @@ package stack;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class StackTest {
+public class FixedIntegerStackTest {
 
 	@Test (expected = NullPointerException.class)
 	public void pushNullElementTest() {
-		Stack stack = new Stack();
+		FixedIntegerStack stack = new FixedIntegerStack();
 		stack.push(null);
 	}
 
 	@Test (expected = StackOverflowException.class)
 	public void stackOverflowTest() {
-		Stack stack = new Stack();
+		FixedIntegerStack stack = new FixedIntegerStack();
 
 		for (int i = 0; i < 1024; i++) {
 			stack.push(i);
@@ -25,13 +25,13 @@ public class StackTest {
 
 	@Test (expected = EmptyStackException.class)
 	public void popOnEmptyStackTest() {
-		Stack stack = new Stack();
+		FixedIntegerStack stack = new FixedIntegerStack();
 		stack.pop();
 	}
 
 	@Test
 	public void popTest(){
-		Stack stack = new Stack();
+		FixedIntegerStack stack = new FixedIntegerStack();
 
 		stack.push(1);
 		stack.push(2);
@@ -51,13 +51,13 @@ public class StackTest {
 
 	@Test
 	public void lengthOfEmptyStackTest() {
-		Stack stack = new Stack();
+		FixedIntegerStack stack = new FixedIntegerStack();
 		Assert.assertEquals(0, stack.length());
 	}
 
 	@Test
 	public void lengthTest() {
-		Stack stack = new Stack();
+		FixedIntegerStack stack = new FixedIntegerStack();
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);

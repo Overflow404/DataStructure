@@ -3,17 +3,17 @@ package queue;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class QueueTest {
+public class FixedIntegerQueueTest {
 
 	@Test (expected = NullPointerException.class)
 	public void pushNullElement() {
-		Queue queue = new Queue();
+		FixedIntegerQueue queue = new FixedIntegerQueue();
 		queue.enqueue(null);
 	}
 
 	@Test (expected = QueueOverflowException.class)
 	public void stackOverflowTest() {
-		Queue queue = new Queue();
+		FixedIntegerQueue queue = new FixedIntegerQueue();
 
 		for (int i = 0; i < 1024; i++) {
 			queue.enqueue(i);
@@ -25,19 +25,19 @@ public class QueueTest {
 
 	@Test (expected = EmptyQueueException.class)
 	public void popOnEmptyStackTest() {
-		Queue queue = new Queue();
+		FixedIntegerQueue queue = new FixedIntegerQueue();
 		queue.dequeue();
 	}
 
 	@Test
 	public void lengthOfEmptyStackTest() {
-		Queue queue = new Queue();
+		FixedIntegerQueue queue = new FixedIntegerQueue();
 		Assert.assertEquals(0, queue.length());
 	}
 
 	@Test
 	public void lengthTest() {
-		Queue queue = new Queue();
+		FixedIntegerQueue queue = new FixedIntegerQueue();
 		queue.enqueue(1);
 		queue.enqueue(2);
 		queue.enqueue(3);
@@ -47,7 +47,7 @@ public class QueueTest {
 
 	@Test
 	public void popTest() {
-		Queue queue = new Queue();
+		FixedIntegerQueue queue = new FixedIntegerQueue();
 		queue.enqueue(1);
 		queue.enqueue(2);
 		queue.enqueue(3);
