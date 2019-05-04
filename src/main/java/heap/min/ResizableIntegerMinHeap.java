@@ -2,6 +2,7 @@ package heap.min;
 
 import heap.EmptyHeapException;
 import heap.Heap;
+
 import java.util.Arrays;
 
 public class ResizableIntegerMinHeap implements Heap<Integer> {
@@ -9,6 +10,7 @@ public class ResizableIntegerMinHeap implements Heap<Integer> {
 	private int capacity;
 	private int current;
 	private Integer[] heap;
+
 
 
 	public ResizableIntegerMinHeap(int initialCapacity) {
