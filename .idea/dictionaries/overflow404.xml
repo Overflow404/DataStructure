@@ -2,6 +2,7 @@
   <dictionary name="overflow404">
     <words>
       <w>dequeue</w>
+      <w>heapify</w>
     </words>
   </dictionary>
 </component>
