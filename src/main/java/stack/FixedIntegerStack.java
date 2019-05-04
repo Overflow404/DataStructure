@@ -30,9 +30,9 @@ public class FixedIntegerStack implements Stack<Integer>{
 			throw new EmptyStackException("Cannot pop from an empty stack!");
 		}
 
-		Integer popped = stack[top];
+		Integer topElement = stack[top];
 		top--;
-		return popped;
+		return topElement;
 	}
 
 	public int length() {

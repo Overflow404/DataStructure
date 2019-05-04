@@ -27,9 +27,9 @@ public class FixedIntegerQueue implements Queue<Integer>{
 		if (top < 0) {
 			throw new EmptyQueueException("Cannot dequeue from an empty queue!");
 		}
-		Integer popped = queue[0];
+		Integer element = queue[0];
 		shiftLeft();
-		return popped;
+		return element;
 	}
 
 	public int length() {
